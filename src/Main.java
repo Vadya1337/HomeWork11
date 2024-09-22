@@ -3,14 +3,15 @@
 public class Main {
     public static void main(String[] args) {
         otstup();
-        task1();
+        printLeapYear();
         otstup();
         int clientOs = 0;
         int clientDeviceYear = 2022;
-        task2(clientOs, clientDeviceYear);
+        int getYear = 2024;
+        printOC(clientOs, clientDeviceYear, getYear);
         otstup();
         int deliveryDistance = 15;
-        int day = task3(deliveryDistance);
+        int day = printKillometr(deliveryDistance);
         if (day > 0) {
             System.out.println("Потребуется: " + day + " дней, срок доставки.");
         } else {
@@ -18,7 +19,7 @@ public class Main {
         }
     }
 
-    public static void task1() {
+    public static void printLeapYear() {
         int year = 2000;
         if (year > 1586) {
             System.out.println();
@@ -30,25 +31,24 @@ public class Main {
         }
     }
 
-    public static void task2(int clientOs, int clientDeviceYear) {
-
-        if (clientOs == 1 && clientDeviceYear > 2015) {
+    public static void printOC(int clientOs, int clientDeviceYear, int getYear) {
+        if (clientOs == 1 && clientDeviceYear > getYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
 
-        } else if (clientOs == 0 && clientDeviceYear > 2015) {
+        } else if (clientOs == 0 && clientDeviceYear > getYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
-        if (clientDeviceYear < 2015 && clientOs == 1) {
+        if (clientDeviceYear < getYear && clientOs == 1) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
 
-        } else if (clientDeviceYear < 2015 && clientOs == 0) {
+        } else if (clientDeviceYear < getYear && clientOs == 0) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
 
         }
     }
 
-    public static int task3(int km) {
+    public static int printKillometr(int km) {
 
         if (km <= 20) {
             return 1;
